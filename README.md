@@ -2,6 +2,8 @@
 
 This project provides the CMSIS core headers as an xPack dependency.
 
+The original README content follows.
+
 ---
 
 ## CMSIS Version 5

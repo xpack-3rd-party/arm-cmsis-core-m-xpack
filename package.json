@@ -1,7 +1,7 @@
 {
-  "name": "@xpack-3rd-party/arm-cmsis-core",
-  "version": "0.1.0",
-  "description": "A source xPack with Arm CMSIS Core",
+  "name": "@xpack-3rd-party/arm-cmsis-core-m",
+  "version": "5.4.0-1-pre",
+  "description": "A source xPack with Arm CMSIS Core-M",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xpack-3rd-party/arm-cmsis-core-xpack.git"
+    "url": "https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack.git"
   },
   "bugs": {
-    "url": "https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/"
+    "url": "https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/issues/"
   },
-  "homepage": "https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/",
+  "homepage": "https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/",
   "keywords": [
     "xpack"
   ],
@@ -39,6 +39,6 @@
   "dependencies": {},
   "devDependencies": {},
   "xpack": {
-    "minimumXpmRequired": "0.12.9"
+    "minimumXpmRequired": "0.11.0"
   }
 }

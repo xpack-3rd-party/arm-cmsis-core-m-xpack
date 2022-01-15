@@ -45,6 +45,31 @@ git clone \
 
 ## Development setup
 
+### Link to central store
+
+When installed as a dependency to a project, the folder in the central
+store is set to read-only, to prevent inadvertend changes.
+
+For development purposes, sometimes projects need writable access.
+
+This can be achieved via links, similarly to npm links.
+
+In practical terms, after downloading this project in the
+work area, make it available via a link from the central store:
+
+```sh
+cd arm-cmsis-core-m-xpack.git
+xpm link
+```
+
+Later, in the project using this package, replace the link to the read-only
+folder with a link to the writable folder:
+
+```sh
+cd project-using-arm-cmsis-core-m-xpack
+xpm link @xpack-3rd-party/arm-cmsis-core-m
+```
+
 ### Install dependencies
 
 With a clean slate, install dependencies:

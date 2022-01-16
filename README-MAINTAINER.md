@@ -173,8 +173,9 @@ as:
   only the `CMSIS/Core/Include` folder, `LICENSE-Arm.txt`,
   `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
-- `npm version patch`, `npm version minor`, `npm version major`
-- push the `xpack-develop` branch to GitHub with `git push origin --tags`
+- push the `xpack-develop` branch to GitHub
+- `npm version 5.4.0-1`
+- the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
   (<https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/actions/workflows/CI.yml>)
 - `npm publish --tag next` (use `--access public` when publishing for

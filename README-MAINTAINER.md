@@ -118,7 +118,7 @@ formatted with clang-format.
 Check the `CMSIS/Core/Include/cmsis_version.h` for the two version digits;
 the value in `ARM.CMSIS.pdsc` may not be up to date.
 
-The new version will look `5.4.0-1`. The third number is 0, since Arm uses
+The new version will look `5.4.0-2`. The third number is 0, since Arm uses
 only two numbers. The fourth number is the xPack release number
 of this version.
 
@@ -128,7 +128,7 @@ Check GitHub issues and pull requests:
 
 - <https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/issues/>
 
-and fix them; assign them to a milestone (like `5.4.0-1`).
+and fix them; assign them to a milestone (like `5.4.0-2`).
 
 ### Check `README.md`
 
@@ -145,8 +145,8 @@ but in the version specific release page.
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _- v5.4.0-1 prepared_
-- commit with a message like _prepare v5.4.0-1_
+- add a new entry like _- v5.4.0-2 prepared_
+- commit with a message like _prepare v5.4.0-2_
 
 ### Prepare a new blog post
 
@@ -155,7 +155,7 @@ In the `micro-os-plus/web-jekyll` GitHub repo:
 - select the `develop` branch
 - add a new file to `_posts/arm-cmsis-core-m/releases`
 - name the file like `2022-01-15-arm-cmsis-core-m-v5-4-0-1-released.md`
-- name the post like: **Arm CMSIS Core v5.4.0-1 released**
+- name the post like: **Arm CMSIS Core v5.4.0-2 released**
 - update the `date:` field with the current date
 - update the GitHub Actions URLs using the actual test pages
 
@@ -174,7 +174,7 @@ as:
   `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
 - push the `xpack-develop` branch to GitHub
-- `npm version 5.4.0-1`
+- `npm version 5.4.0-2`
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
   (<https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/actions/workflows/CI.yml>)
@@ -199,7 +199,7 @@ When the package is considered stable:
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core-m`
-- `npm dist-tag add @xpack-3rd-party/arm-cmsis-core-m@5.4.0-1 latest`
+- `npm dist-tag add @xpack-3rd-party/arm-cmsis-core-m@5.4.0-2 latest`
 - `npm dist-tag ls @@xpack-3rd-party/arm-cmsis-core-m`
 
 ## Announce to the community
@@ -210,6 +210,6 @@ Post an announcement to the forum.
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@micro_os_plus` account
-- paste the release name like **Arm CMSIS Core v5.4.0-1 released**
+- paste the release name like **Arm CMSIS Core v5.4.0-2 released**
 - paste the link to the Web page release
 - click the **Tweet** button

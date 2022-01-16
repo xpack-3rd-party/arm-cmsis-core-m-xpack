@@ -171,6 +171,7 @@ as:
 - commit all changes
 - `npm pack` and check the content of the archive, which should list
   only the `CMSIS/Core/Include` folder, `LICENSE-Arm.txt`,
+  the CMake files,
   `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
 - push the `xpack-develop` branch to GitHub

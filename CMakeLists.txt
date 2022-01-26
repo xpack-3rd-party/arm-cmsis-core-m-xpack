@@ -16,7 +16,7 @@
 #
 # `add_subdirectory("xpacks/xpack-3rd-party-arm-cmsis-core-m")`
 #
-# The result is an interface library that can be added to the linker with:
+# The result is a library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC xpack-3rd-party::arm-cmsis-core-m)`
 #
@@ -33,14 +33,36 @@ project(
   DESCRIPTION "Arm CMSIS Core-M"
 )
 
+# Must be called from the project root folder.
+enable_testing()
+
+# -----------------------------------------------------------------------------
+## Project wide setup ##
+
+enable_language(C)
+enable_language(CXX)
+enable_language(ASM)
+
+# Specify the C/C++ standards.
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# -----------------------------------------------------------------------------
+
 if ("${CMAKE_CURRENT_LIST_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-  # Building tests for the current project.
-  enable_testing() # Must be called from the project root folder.
-  add_subdirectory(tests)
+
+  # Tests, only when not part of a parent application
+  add_subdirectory("tests")
+
 else()
-  # If not a standalone project, then a library included in a top project.
-  # Reuse the package configuration.
-  include("${CMAKE_CURRENT_LIST_DIR}/cmake/xpack-3rd-party-arm-cmsis-core-m-config.cmake")
+
+  ## Main targets built by this project ##
+  add_subdirectory("CMSIS/Core")
+
 endif()
 
 # -----------------------------------------------------------------------------

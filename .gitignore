@@ -26,4 +26,7 @@ Thumbs.db
 .DS_Store
 
 *.tgz
+
+build/
 # end
+

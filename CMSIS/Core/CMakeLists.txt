@@ -8,7 +8,7 @@
 #
 # -----------------------------------------------------------------------------
 
-# https://cmake.org/cmake/help/v3.19/
+# https://cmake.org/cmake/help/v3.20/
 
 # PRIVATE: build definitions, used internally
 # INTERFACE: usage definitions, passed up to targets linking to it
@@ -21,7 +21,7 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-# https://cmake.org/cmake/help/v3.19/command/add_library.html?highlight=interface#interface-libraries
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 add_library(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # ---------------------------------------------------------------------------

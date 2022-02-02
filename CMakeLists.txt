@@ -19,9 +19,6 @@
 # The result is a library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC xpack-3rd-party::arm-cmsis-core-m)`
-#
-# To avoid poluting this file with test related details, there is a separate
-# CMake configuration in the `tests` folder.
 
 # -----------------------------------------------------------------------------
 
@@ -30,12 +27,8 @@ cmake_minimum_required(VERSION 3.20)
 
 project(
   xpack-3rd-party-arm-cmsis-core-m
-  DESCRIPTION "Arm CMSIS Core-M"
+  DESCRIPTION "Arm CMSIS Core-M headers"
 )
-
-# PRIVATE: build definitions, used internally
-# INTERFACE: usage definitions, passed up to targets linking to it
-# PUBLIC: both
 
 if(COMMAND xpack_get_package_name_and_version)
   xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
@@ -43,11 +36,17 @@ if(COMMAND xpack_get_package_name_and_version)
 endif()
 
 # -----------------------------------------------------------------------------
+## The project library definitions ##
 
-# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
+# PRIVATE: build definitions, used internally
+# INTERFACE: usage definitions, passed up to targets linking to it
+# PUBLIC: both
+
 add_library(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE EXCLUDE_FROM_ALL)
 
-# ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# Target settings.
 
 target_sources(
   xpack-3rd-party-arm-cmsis-core-m-interface
@@ -56,11 +55,11 @@ target_sources(
     # ...
 )
 
-target_include_directories(
+  # The only contribution of this package is a folder with headers.
+  target_include_directories(
   xpack-3rd-party-arm-cmsis-core-m-interface
 
   INTERFACE
-    # The only contribution of this package is a folder with headers.
     "CMSIS/Core/Include"
 )
 
@@ -75,6 +74,7 @@ target_compile_definitions(
     # cmsis_gcc.h:133:15: error: nested extern declaration of '_start' [-Werror=nested-externs]
     __PROGRAM_START
 )
+message(VERBOSE "+ -D__PROGRAM_START")
 
 target_compile_options(
   xpack-3rd-party-arm-cmsis-core-m-interface
@@ -87,13 +87,13 @@ target_link_libraries(
   xpack-3rd-party-arm-cmsis-core-m-interface
 
   INTERFACE
-    # Dependencies
+    # ...
 )
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Aliases.
 
 add_library(xpack-3rd-party::arm-cmsis-core-m ALIAS xpack-3rd-party-arm-cmsis-core-m-interface)
-message(VERBOSE "xpack-3rd-party::arm-cmsis-core-m -> xpack-3rd-party-arm-cmsis-core-m-interface")
+message(VERBOSE "> xpack-3rd-party::arm-cmsis-core-m -> xpack-3rd-party-arm-cmsis-core-m-interface")
 
 # -----------------------------------------------------------------------------

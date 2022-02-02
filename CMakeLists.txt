@@ -6,17 +6,16 @@
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/MIT/.
+#
 # -----------------------------------------------------------------------------
 
 # This file is intended to be consumed by applications with:
 #
-# `find_package(xpack-3rd-party-arm-cmsis-core-m REQUIRED)`
-#
-# or, if CMake packages are not used, manually with:
-#
 # `add_subdirectory("xpacks/xpack-3rd-party-arm-cmsis-core-m")`
 #
-# The result is a library that can be added to the linker with:
+# The result is an interface library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC xpack-3rd-party::arm-cmsis-core-m)`
 
@@ -48,22 +47,22 @@ add_library(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE EXCLUDE_FROM_AL
 # -----------------------------------------------------------------------------
 # Target settings.
 
-target_sources(
-  xpack-3rd-party-arm-cmsis-core-m-interface
-
-  INTERFACE
-    # ...
-)
-
-  # The only contribution of this package is a folder with headers.
-  target_include_directories(
+# The only contribution of this package is a folder with headers.
+target_include_directories(
   xpack-3rd-party-arm-cmsis-core-m-interface
 
   INTERFACE
     "CMSIS/Core/Include"
 )
 
-message(VERBOSE "+ CMSIS/Core/Include")
+message(VERBOSE "+ -I CMSIS/Core/Include")
+
+target_sources(
+  xpack-3rd-party-arm-cmsis-core-m-interface
+
+  INTERFACE
+    # ...
+)
 
 target_compile_definitions(
   xpack-3rd-party-arm-cmsis-core-m-interface
@@ -74,25 +73,27 @@ target_compile_definitions(
     # cmsis_gcc.h:133:15: error: nested extern declaration of '_start' [-Werror=nested-externs]
     __PROGRAM_START
 )
-message(VERBOSE "+ -D__PROGRAM_START")
+message(VERBOSE "+ -D __PROGRAM_START")
 
 target_compile_options(
   xpack-3rd-party-arm-cmsis-core-m-interface
 
   INTERFACE
-    # Perhaps ignore some warnings.
+    # ... perhaps ignore some warnings.
 )
 
 target_link_libraries(
   xpack-3rd-party-arm-cmsis-core-m-interface
 
   INTERFACE
-    # ...
+    # Dependencies
+    # ... list all dependencies.
 )
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library(xpack-3rd-party::arm-cmsis-core-m ALIAS xpack-3rd-party-arm-cmsis-core-m-interface)
 message(VERBOSE "> xpack-3rd-party::arm-cmsis-core-m -> xpack-3rd-party-arm-cmsis-core-m-interface")
 

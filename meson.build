@@ -27,7 +27,6 @@
 
 message('Processing xPack @xpack-3rd-party/arm-cmsis-core-...')
 
-# Public definitions, also passed up to targets linking to them.
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 xpack_3rd_party_arm_cmsis_core_m_dependency = declare_dependency(
   include_directories: include_directories(

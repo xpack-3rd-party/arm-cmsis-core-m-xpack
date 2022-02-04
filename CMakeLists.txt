@@ -55,8 +55,6 @@ target_include_directories(
     "CMSIS/Core/Include"
 )
 
-message(VERBOSE "+ -I CMSIS/Core/Include")
-
 target_sources(
   xpack-3rd-party-arm-cmsis-core-m-interface
 
@@ -71,9 +69,8 @@ target_compile_definitions(
     # Workaround to avoid
     # https://github.com/ARM-software/CMSIS_5/issues/1397
     # cmsis_gcc.h:133:15: error: nested extern declaration of '_start' [-Werror=nested-externs]
-    __PROGRAM_START
+    "__PROGRAM_START"
 )
-message(VERBOSE "+ -D __PROGRAM_START")
 
 target_compile_options(
   xpack-3rd-party-arm-cmsis-core-m-interface
@@ -89,6 +86,10 @@ target_link_libraries(
     # Dependencies
     # ... list all dependencies.
 )
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(xpack-3rd-party-arm-cmsis-core-m-interface)
+endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.

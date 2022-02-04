@@ -6,6 +6,19 @@ Please check
 [GitHub](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-04
+
+- v5.4.0-4
+- b093eacc7 cmake: add xpack_display_target_lists
+
+## 2022-02-02
+
+- 8f0205070 add meson support
+
+## 2022-01-28
+
+- 2fbf40e3c rework CMake, top config
+
 ## 2022-01-26
 
 - v5.4.0-3

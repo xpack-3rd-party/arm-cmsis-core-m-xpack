@@ -179,8 +179,8 @@ as:
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
   (<https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/actions/workflows/CI.yml>)
-- `npm publish --tag next` (use `--access public` when publishing for
-  the first time)
+- `npm publish --tag next` (use `npm publish --access public` when
+  publishing for the first time)
 
 The version is visible at:
 

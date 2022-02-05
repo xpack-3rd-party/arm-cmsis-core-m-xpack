@@ -6,6 +6,10 @@ Please check
 [GitHub](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-05
+
+- v5.4.0-5
+
 ## 2022-02-04
 
 - v5.4.0-4

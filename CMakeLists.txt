@@ -48,43 +48,28 @@ add_library(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE EXCLUDE_FROM_AL
 # Target settings.
 
 # The only contribution of this package is a folder with headers.
-target_include_directories(
-  xpack-3rd-party-arm-cmsis-core-m-interface
-
-  INTERFACE
-    "CMSIS/Core/Include"
+target_include_directories(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE
+  "CMSIS/Core/Include"
 )
 
-target_sources(
-  xpack-3rd-party-arm-cmsis-core-m-interface
-
-  INTERFACE
-    # ...
+target_sources(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE
+  # None.
 )
 
-target_compile_definitions(
-  xpack-3rd-party-arm-cmsis-core-m-interface
-
-  INTERFACE
-    # Workaround to avoid
-    # https://github.com/ARM-software/CMSIS_5/issues/1397
-    # cmsis_gcc.h:133:15: error: nested extern declaration of '_start' [-Werror=nested-externs]
-    "__PROGRAM_START"
+target_compile_definitions(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE
+  # Workaround to avoid
+  # https://github.com/ARM-software/CMSIS_5/issues/1397
+  # cmsis_gcc.h:133:15: error: nested extern declaration of '_start' [-Werror=nested-externs]
+  "__PROGRAM_START"
 )
 
-target_compile_options(
-  xpack-3rd-party-arm-cmsis-core-m-interface
-
-  INTERFACE
-    # ... perhaps ignore some warnings.
+target_compile_options(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE
+  # None.
 )
 
-target_link_libraries(
-  xpack-3rd-party-arm-cmsis-core-m-interface
-
-  INTERFACE
-    # Dependencies
-    # ... list all dependencies.
+target_link_libraries(xpack-3rd-party-arm-cmsis-core-m-interface INTERFACE
+  # Dependencies
+  # None.
 )
 
 if (COMMAND xpack_display_target_lists)

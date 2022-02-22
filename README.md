@@ -1,9 +1,9 @@
-# A source xPack with Arm CMSIS Core-M
+# A source library xPack with Google Test
 
-This project provides the CMSIS Core-M headers as an xPack dependency.
+This project provides the **Google Test** libraries as an xPack dependency.
 
 The project is hosted on GitHub as
-[xpack-3rd-party/arm-cmsis-core-m-xpack](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack).
+[xpack-3rd-party/googletest-xpack](https://github.com/xpack-3rd-party/googletest-xpack).
 
 ## Maintainer info
 
@@ -15,8 +15,8 @@ For maintainer infos, please see the
 
 ## Install
 
-As a source xPacks, the easiest way to add it to a project is via **xpm**,
-but it can also be used as any Git project, for example as a submodule.
+As a source library xPacks, the easiest way to add it to a project is via
+**xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
 
@@ -29,14 +29,14 @@ For details please follow the instructions in the
 ### xpm
 
 This package is available from npmjs.com as
-[`@xpack-3rd-party/arm-cmsis-core-m`](https://www.npmjs.com/package/@xpack-3rd-party/arm-cmsis-core-m)
+[`@xpack-3rd-party/googletest`](https://www.npmjs.com/package/@xpack-3rd-party/googletest)
 from the `npmjs.com` registry:
 
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install @xpack-3rd-party/arm-cmsis-core-m@latest
+xpm install @xpack-3rd-party/googletest@latest
 ```
 
 Note: work in progress.
@@ -51,8 +51,8 @@ cd my-project
 git init # Unless already a Git project
 mkdir -p xpacks
 
-git submodule add https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack.git \
-  xpacks/micro-os-plus-micro-test-plus
+git submodule add https://github.com/xpack-3rd-party/googletest-xpack.git \
+  xpacks/xpack-3rd-party-googletest
 ```
 
 ## Branches
@@ -77,12 +77,12 @@ This package provides only C headers.
 
 #### Include folders
 
-- `CMSIS/Core/Include`
+- TBD
 
 The header files can then be included in user projects with statements like:
 
 ```c++
-#include <core_cm4.h>
+#include <XXX.h>
 ```
 
 #### Preprocessor definitions

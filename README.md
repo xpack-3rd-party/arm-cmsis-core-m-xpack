@@ -1,6 +1,6 @@
-# A source xPack with Arm CMSIS Core-M
+# A source library xPack with Arm CMSIS Core-M
 
-This project provides the CMSIS Core-M headers as an xPack dependency.
+This project provides the **CMSIS Core-M** headers as an xPack dependency.
 
 The project is hosted on GitHub as
 [xpack-3rd-party/arm-cmsis-core-m-xpack](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack).
@@ -62,18 +62,31 @@ There are three active branches:
 - `xpack-develop`, with the current development version
 
 All development is done in the `xpack-develop` branch, and contributions via
-Pull Requests should be directed to this branch.
+Pull Requests should be directed to this branch. (Only contributions
+related to the xPack integration are accepted, functional contributions
+should be addressed to the upstream project.)
 
 When new releases are published, the `xpack-develop` branch is merged
 into `xpack`.
 
-## User info
+## Developer info
 
-This package provides only C headers.
+This package provides the full CMSIS_5 code, but when
+installed via xpm the content is filtered and only the
+CMSIS Core-M files are used.
+
+In addition to the source files, the
+configuration files required to integrate it into
+CMake and meson projects, via a CMake INTERFACE library, or
+a meson dependency.
 
 ### Build & integration info
 
+The headers are written in C, but can also be used in C++ projects.
+
 #### Include folders
+
+The following folders should be used during the build:
 
 - `CMSIS/Core/Include`
 
@@ -83,17 +96,73 @@ The header files can then be included in user projects with statements like:
 #include <core_cm4.h>
 ```
 
+#### Source folders
+
+- none
+
 #### Preprocessor definitions
 
 - none required
+
+### Example
+
+The CMSIS Core headers are not intended for end-user consumption, but by
+vendor, to include them in their specific device headers.
 
 ### Known problems
 
 - none
 
+#### CMake
+
+To integrate the CMSIS Core-M headers into a CMake application, add this
+folder to the build:
+
+```cmake
+add_subdirectory("xpacks/xpack-3rd-party-arm-cmsis-core-m")`
+```
+
+The result is an INTERFACE library that can be added
+as a dependency with:
+
+```cmake
+target_link_libraries(your-target PRIVATE
+  ...
+  xpack-3rd-party::googletest
+)
+```
+
+#### meson
+
+To integrate the CMSIS Core-M headers into a meson application, add this
+folder to the build:
+
+```meson
+subdir('xpacks/xpack-3rd-party-arm-cmsis-core-m')
+```
+
+The result is an object that can be added
+as a dependency with:
+
+```meson
+exe = executable(
+  your-target,
+
+  dependencies: [
+    xpack_3rd_party_arm_cmsis_core_m_dependency,
+  ],
+)
+```
+
 ### Tests
 
 TBD
+
+### Documentation
+
+Tho original documentation is available on-line:
+
+- <https://www.keil.com/pack/doc/CMSIS/Core/html/index.html>
 
 ## License
 
@@ -106,7 +175,7 @@ The Arm content is provided under the terms of the Apache 2.0 License.
 
 ---
 
-The original README content follows.
+The original Arm README content follows.
 
 ## CMSIS Version 5
 

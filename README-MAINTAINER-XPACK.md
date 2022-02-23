@@ -139,39 +139,22 @@ but in the version specific release page.
 
 ### Update versions in `README` files
 
-- update version in `README-MAINTAINER.md`
+- update version in `README-MAINTAINER-XPACK.md`
 - update version in `README.md`
 
-### Update `CHANGELOG.md`
+### Update `CHANGELOG-XPACK.md`
 
-- open the `CHANGELOG.md` file
+- open the `CHANGELOG-XPACK.md` file
 - check if all previous fixed issues are in
 - add a new entry like _- v5.4.0-5 prepared_
 - commit with a message like _prepare v5.4.0-5_
-
-### Prepare a new blog post
-
-In the `micro-os-plus/web-jekyll` GitHub repo:
-
-- select the `develop` branch
-- add a new file to `_posts/arm-cmsis-core-m/releases`
-- name the file like `2022-01-15-arm-cmsis-core-m-v5-4-0-1-released.md`
-- name the post like: **Arm CMSIS Core v5.4.0-5 released**
-- update the `date:` field with the current date
-- update the GitHub Actions URLs using the actual test pages
-
-If any, refer to closed
-[issues](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/issues/)
-as:
-
-- **[Issue:\[#1\]\(...\)]**.
 
 ### Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
 - commit all changes
 - `npm pack` and check the content of the archive, which should list
-  only `package.json`, `README.md`, `LICENSE`, `CHANGELOG.md`,
+  only `package.json`, `README.md`, `LICENSE`, `CHANGELOG-XPACK.md`,
   the sources and CMake/meson files;
   possibly adjust `.npmignore`
 - push the `xpack-develop` branch to GitHub
@@ -202,15 +185,3 @@ When the release is considered stable, promote it as `latest`:
 - `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core-m`
 - `npm dist-tag add @xpack-3rd-party/arm-cmsis-core-m@5.4.0-5 latest`
 - `npm dist-tag ls @@xpack-3rd-party/arm-cmsis-core-m`
-
-## Announce to the community
-
-Post an announcement to the forum.
-
-## Share on Twitter
-
-- in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
-- using the `@micro_os_plus` account
-- paste the release name like **Arm CMSIS Core v5.4.0-5 released**
-- paste the link to the Web page release
-- click the **Tweet** button

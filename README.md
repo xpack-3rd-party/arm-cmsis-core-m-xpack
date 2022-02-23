@@ -1,9 +1,9 @@
-# A source library xPack with Google Test
+# A source xPack with Arm CMSIS Core-M
 
-This project provides the **Google Test** libraries as an xPack dependency.
+This project provides the CMSIS Core-M headers as an xPack dependency.
 
 The project is hosted on GitHub as
-[xpack-3rd-party/googletest-xpack](https://github.com/xpack-3rd-party/googletest-xpack).
+[xpack-3rd-party/arm-cmsis-core-m-xpack](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack).
 
 ## Maintainer info
 
@@ -11,7 +11,7 @@ This page is addressed to developers who plan to include this package
 into their own projects.
 
 For maintainer infos, please see the
-[README-MAINTAINER](README-MAINTAINER.md) file.
+[README-MAINTAINER-XPACK](README-MAINTAINER-XPACK.md) file.
 
 ## Install
 
@@ -29,17 +29,15 @@ For details please follow the instructions in the
 ### xpm
 
 This package is available from npmjs.com as
-[`@xpack-3rd-party/googletest`](https://www.npmjs.com/package/@xpack-3rd-party/googletest)
+[`@xpack-3rd-party/arm-cmsis-core-m`](https://www.npmjs.com/package/@xpack-3rd-party/arm-cmsis-core-m)
 from the `npmjs.com` registry:
 
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install @xpack-3rd-party/googletest@latest
+xpm install @xpack-3rd-party/arm-cmsis-core-m@latest
 ```
-
-Note: work in progress.
 
 ### Git submodule
 
@@ -51,8 +49,8 @@ cd my-project
 git init # Unless already a Git project
 mkdir -p xpacks
 
-git submodule add https://github.com/xpack-3rd-party/googletest-xpack.git \
-  xpacks/xpack-3rd-party-googletest
+git submodule add https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack.git \
+  xpacks/micro-os-plus-micro-test-plus
 ```
 
 ## Branches
@@ -77,12 +75,12 @@ This package provides only C headers.
 
 #### Include folders
 
-- TBD
+- `CMSIS/Core/Include`
 
 The header files can then be included in user projects with statements like:
 
 ```c++
-#include <XXX.h>
+#include <core_cm4.h>
 ```
 
 #### Preprocessor definitions

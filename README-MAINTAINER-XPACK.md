@@ -184,4 +184,4 @@ When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core-m`
 - `npm dist-tag add @xpack-3rd-party/arm-cmsis-core-m@5.4.0-5 latest`
-- `npm dist-tag ls @@xpack-3rd-party/arm-cmsis-core-m`
+- `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core-m`

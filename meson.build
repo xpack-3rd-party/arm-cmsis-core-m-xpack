@@ -16,7 +16,7 @@
 #
 # `subdir('xpacks/xpack-3rd-party-arm-cmsis-core-m')`
 #
-# The result is a dependency that can be refered as:
+# The result is a dependency that can be referred as:
 #
 # `dependencies: [xpack_3rd_party_arm_cmsis_core_m_dependency],`
 

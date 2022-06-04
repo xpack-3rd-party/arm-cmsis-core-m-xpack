@@ -1,7 +1,7 @@
-[![license](https://img.shields.io/github/license/xpack-3rd-party/arm-cmsis-core-m-xpack)](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/actions?query=workflow%3A%22CI+on+Push%22)
-[![GitHub issues](https://img.shields.io/github/issues/xpack-3rd-party/arm-cmsis-core-m-xpack.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/issues/)
-[![GitHub pulls](https://img.shields.io/github/issues-pr/xpack-3rd-party/arm-cmsis-core-m-xpack.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/pulls)
+[![license](https://img.shields.io/github/license/xpack-3rd-party/arm-cmsis-core-xpack)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![GitHub issues](https://img.shields.io/github/issues/xpack-3rd-party/arm-cmsis-core-xpack.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/xpack-3rd-party/arm-cmsis-core-xpack.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/pulls)
 
 # Maintainer info
 
@@ -20,28 +20,28 @@ npm install --global xpm@latest
 
 The project is hosted on GitHub as:
 
-- <https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack.git>
+- <https://github.com/xpack-3rd-party/arm-cmsis-core-xpack.git>
 
 To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
 
 ```sh
-rm -rf ~/Work/xpack-3rd-party/arm-cmsis-core-m-xpack.git && \
+rm -rf ~/Work/xpack-3rd-party/arm-cmsis-core-xpack.git && \
 mkdir -p ~/Work/xpack-3rd-party && \
 git clone \
-  https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack.git \
-  ~/Work/xpack-3rd-party/arm-cmsis-core-m-xpack.git
+  https://github.com/xpack-3rd-party/arm-cmsis-core-xpack.git \
+  ~/Work/xpack-3rd-party/arm-cmsis-core-xpack.git
 ```
 
 For development purposes, clone the `xpack-develop` branch:
 
 ```sh
-rm -rf ~/Work/xpack-3rd-party/arm-cmsis-core-m-xpack.git && \
+rm -rf ~/Work/xpack-3rd-party/arm-cmsis-core-xpack.git && \
 mkdir -p ~/Work/xpack-3rd-party && \
 git clone \
   --branch xpack-develop \
-  https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack.git \
-  ~/Work/xpack-3rd-party/arm-cmsis-core-m-xpack.git
+  https://github.com/xpack-3rd-party/arm-cmsis-core-xpack.git \
+  ~/Work/xpack-3rd-party/arm-cmsis-core-xpack.git
 ```
 
 ## Development setup
@@ -49,9 +49,9 @@ git clone \
 ### Link to central store
 
 When installed as a dependency to a project, the folder in the central
-store is set to read-only, to prevent inadvertend changes.
+store is set to read-only, to prevent inadvertent changes.
 
-For development purposes, sometimes projects need writable access.
+For development purposes, sometimes projects need writeable access.
 
 This can be achieved via links, similarly to npm links.
 
@@ -59,16 +59,16 @@ In practical terms, after downloading this project in the
 work area, make it available via a link from the central store:
 
 ```sh
-cd arm-cmsis-core-m-xpack.git
+cd arm-cmsis-core-xpack.git
 xpm link
 ```
 
 Later, in the project using this package, replace the link to the read-only
-folder with a link to the writable folder:
+folder with a link to the writeable folder:
 
 ```sh
-cd project-using-arm-cmsis-core-m-xpack
-xpm link @xpack-3rd-party/arm-cmsis-core-m
+cd project-using-arm-cmsis-core-xpack
+xpm link @xpack-3rd-party/arm-cmsis-core
 ```
 
 ### Install dependencies
@@ -76,7 +76,7 @@ xpm link @xpack-3rd-party/arm-cmsis-core-m
 With a clean slate, install dependencies:
 
 ```sh
-cd arm-cmsis-core-m-xpack.git
+cd arm-cmsis-core-xpack.git
 xpm install --all-configs
 ```
 
@@ -87,14 +87,14 @@ The project includes unit tests.
 To perform the tests, run the usual xpm sequence:
 
 ```sh
-cd arm-cmsis-core-m-xpack.git
+cd arm-cmsis-core-xpack.git
 xpm run test-all
 ```
 
 ## Continuous Integration
 
 All available tests are also performed on GitHub Actions, as the
-[CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 workflow.
 
 Note: not yet used.
@@ -119,7 +119,7 @@ formatted with clang-format.
 Check the `CMSIS/Core/Include/cmsis_version.h` for the two version digits;
 the value in `ARM.CMSIS.pdsc` may not be up to date.
 
-The new version will look `5.4.0-5`. The third number is 0, since Arm uses
+The new version will look `5.4.0-6`. The third number is 0, since Arm uses
 only two numbers. The fourth number is the xPack release number
 of this version.
 
@@ -127,9 +127,9 @@ of this version.
 
 Check GitHub issues and pull requests:
 
-- <https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/issues/>
+- <https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/>
 
-and fix them; assign them to a milestone (like `5.4.0-5`).
+and fix them; assign them to a milestone (like `5.4.0-6`).
 
 ### Check `README.md`
 
@@ -146,8 +146,8 @@ but in the version specific release page.
 
 - open the `CHANGELOG-XPACK.md` file
 - check if all previous fixed issues are in
-- add a new entry like _- v5.4.0-5 prepared_
-- commit with a message like _prepare v5.4.0-5_
+- add a new entry like _- v5.4.0-6 prepared_
+- commit with a message like _prepare v5.4.0-6_
 
 ### Publish on the npmjs.com server
 
@@ -158,16 +158,16 @@ but in the version specific release page.
   the sources and CMake/meson files;
   possibly adjust `.npmignore`
 - push the `xpack-develop` branch to GitHub
-- `npm version 5.4.0-5`
+- `npm version 5.4.0-6`
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
-  (<https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack/actions/workflows/CI.yml>)
+  (<https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml>)
 - `npm publish --tag next` (use `npm publish --access public` when
   publishing for the first time)
 
 The version is visible at:
 
-- <https://www.npmjs.com/package/@xpack-3rd-party/arm-cmsis-core-m?activeTab=versions>
+- <https://www.npmjs.com/package/@xpack-3rd-party/arm-cmsis-core?activeTab=versions>
 
 ## Update the repo
 
@@ -182,6 +182,6 @@ When the package is considered stable:
 
 When the release is considered stable, promote it as `latest`:
 
-- `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core-m`
-- `npm dist-tag add @xpack-3rd-party/arm-cmsis-core-m@5.4.0-5 latest`
-- `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core-m`
+- `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core`
+- `npm dist-tag add @xpack-3rd-party/arm-cmsis-core@5.4.0-6 latest`
+- `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core`

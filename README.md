@@ -1,9 +1,9 @@
-# A source library xPack with Arm CMSIS Core-M
+# A source library xPack with Arm CMSIS Core
 
-This project provides the **CMSIS Core-M** headers as an xPack dependency.
+This project provides the **CMSIS Core** headers as an xPack dependency.
 
 The project is hosted on GitHub as
-[xpack-3rd-party/arm-cmsis-core-m-xpack](https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack).
+[xpack-3rd-party/arm-cmsis-core-xpack](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack).
 
 ## Maintainer info
 
@@ -29,16 +29,16 @@ For details please follow the instructions in the
 ### xpm
 
 This package is available from npmjs.com as
-[`@xpack-3rd-party/arm-cmsis-core-m`](https://www.npmjs.com/package/@xpack-3rd-party/arm-cmsis-core-m)
+[`@xpack-3rd-party/arm-cmsis-core`](https://www.npmjs.com/package/@xpack-3rd-party/arm-cmsis-core)
 from the `npmjs.com` registry:
 
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install @xpack-3rd-party/arm-cmsis-core-m@latest
+xpm install @xpack-3rd-party/arm-cmsis-core@latest
 
-ls -l xpacks/xpack-3rd-party-arm-cmsis-core-m
+ls -l xpacks/xpack-3rd-party-arm-cmsis-core
 ```
 
 ### Git submodule
@@ -51,7 +51,7 @@ cd my-project
 git init # Unless already a Git project
 mkdir -p xpacks
 
-git submodule add https://github.com/xpack-3rd-party/arm-cmsis-core-m-xpack.git \
+git submodule add https://github.com/xpack-3rd-party/arm-cmsis-core-xpack.git \
   xpacks/micro-os-plus-micro-test-plus
 ```
 
@@ -75,7 +75,7 @@ into `xpack`.
 
 This package provides the full CMSIS_5 code, but when
 installed via xpm the content is filtered and only the
-CMSIS Core-M files are used.
+CMSIS Core files are used.
 
 In addition to the source files, the
 configuration files required to integrate it into
@@ -88,7 +88,7 @@ The headers are written in C, but can also be used in C++ projects.
 
 #### Include folders
 
-The following folders should be used during the build:
+For Cortex-M, the following folders should be used during the build:
 
 - `CMSIS/Core/Include`
 
@@ -98,13 +98,39 @@ The header files can then be included in user projects with statements like:
 #include <core_cm4.h>
 ```
 
+Similarly for Cortex-A:
+
+- `CMSIS/Core_A/Include`
+
+```c++
+#include <core_ca.h>
+```
+
 #### Source folders
 
 - none
 
 #### Preprocessor definitions
 
-- none required
+When including the `core_cm*.h`, the following definitions are expected:
+
+- `__CM0_REV`, `__CM0PLUS_REV`, `__CM3_REV`, `__CM4_REV`, `__CM7_REV`
+- `__MPU_PRESENT`
+- `__NVIC_PRIO_BITS`
+- `__FPU_PRESENT`
+- `__Vendor_SysTickConfig`
+
+When including the `core_ca.h`, the following definitions are expected:
+
+- `__CORTEX_A`
+- `__CA_REV`
+- `__FPU_PRESENT`
+- `__GIC_PRESENT`
+- `__TIM_PRESENT`
+- `__L2C_PRESENT`
+
+Note: the Cortex-A support seems to cover only a small number of
+32-bit devices and the quality is debatable.
 
 ### Example
 
@@ -113,15 +139,15 @@ vendor, to include them in their specific device headers.
 
 ### Known problems
 
-- none
+- the headers, especially the Core_A, may trigger warnings.
 
 #### CMake
 
-To integrate the CMSIS Core-M headers into a CMake application, add this
+To integrate the CMSIS Core headers into a CMake application, add this
 folder to the build:
 
 ```cmake
-add_subdirectory("xpacks/xpack-3rd-party-arm-cmsis-core-m")`
+add_subdirectory("xpacks/xpack-3rd-party-arm-cmsis-core")`
 ```
 
 The result is an INTERFACE library that can be added
@@ -130,17 +156,17 @@ as a dependency with:
 ```cmake
 target_link_libraries(your-target PRIVATE
   ...
-  xpack-3rd-party::googletest
+  xpack-3rd-party::arm-cmsis-core
 )
 ```
 
 #### meson
 
-To integrate the CMSIS Core-M headers into a meson application, add this
+To integrate the CMSIS Core headers into a meson application, add this
 folder to the build:
 
 ```meson
-subdir('xpacks/xpack-3rd-party-arm-cmsis-core-m')
+subdir('xpacks/xpack-3rd-party-arm-cmsis-core')
 ```
 
 The result is an object that can be added
@@ -151,7 +177,7 @@ exe = executable(
   your-target,
 
   dependencies: [
-    xpack_3rd_party_arm_cmsis_core_m_dependency,
+    xpack_3rd_party_arm_cmsis_core_dependency,
   ],
 )
 ```

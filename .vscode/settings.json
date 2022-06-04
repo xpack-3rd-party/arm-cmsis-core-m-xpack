@@ -3,7 +3,11 @@
     80
   ],
   "cSpell.ignoreWords": [
+    "Ionescu",
+    "Liviu",
+    "NVIC",
     "POSIX",
+    "PRIO",
     "buildtype",
     "cmake",
     "cmsis",
@@ -15,6 +19,7 @@
     "newlib",
     "npmignore",
     "npmjs",
+    "pdsc",
     "postversion",
     "semihosting",
     "subdir",

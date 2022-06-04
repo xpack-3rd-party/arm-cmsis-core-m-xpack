@@ -48,6 +48,8 @@ README-*
 /CMSIS/*
 !/CMSIS/Core/Include/
 /CMSIS/Core/Template/
+!/CMSIS/Core_A/Include/
+/CMSIS/Core_A/Source/
 /Device/
 /docker/
 

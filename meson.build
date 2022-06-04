@@ -14,11 +14,15 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `subdir('xpacks/xpack-3rd-party-arm-cmsis-core-m')`
+# `subdir('xpacks/xpack-3rd-party-arm-cmsis-core')`
 #
 # The result is a dependency that can be referred as:
 #
 # `dependencies: [xpack_3rd_party_arm_cmsis_core_m_dependency],`
+#
+# Similarly for Cortex-A:
+#
+# `dependencies: [xpack_3rd_party_arm_cmsis_core_a_dependency],`
 
 # Note: the meson configuration is provided only as a proof of concept,
 # for production it might need some refinements.
@@ -32,15 +36,34 @@ xpack_3rd_party_arm_cmsis_core_m_dependency = declare_dependency(
   include_directories: include_directories(
     'CMSIS/Core/Include',
   ),
+  sources: files(
+  ),
   compile_args: [
     # Workaround to avoid -Werror=nested-externs
     '-D__PROGRAM_START',
   ],
-
 )
 
 message('+ -I CMSIS/Core/Include')
 message('+ -D __PROGRAM_START')
 message('> xpack_3rd_party_arm_cmsis_core_m_dependency')
+
+# -----------------------------------------------------------------------------
+
+xpack_3rd_party_arm_cmsis_core_a_dependency = declare_dependency(
+  include_directories: include_directories(
+    'CMSIS/Core_A/Include',
+  ),
+  sources: files(
+  ),
+  compile_args: [
+    # Workaround to avoid -Werror=nested-externs
+    '-D__PROGRAM_START',
+  ],
+)
+
+message('+ -I CMSIS/Core_A/Include')
+message('+ -D __PROGRAM_START')
+message('> xpack_3rd_party_arm_cmsis_core_a_dependency')
 
 # -----------------------------------------------------------------------------

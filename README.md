@@ -1,3 +1,6 @@
+[![license](https://img.shields.io/github/license/xpack-3rd-party/arm-cmsis-core-xpack)](https://github.com/xpack-3rd-party/architecture-aarch32-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml)
+
 # A source library xPack with Arm CMSIS Core
 
 This project provides the **CMSIS Core** headers as an xPack dependency.
@@ -15,7 +18,7 @@ For maintainer info, please see the
 
 ## Install
 
-As a source library xPacks, the easiest way to add it to a project is via
+As a source library xPack, the easiest way to add it to a project is via
 **xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
@@ -73,6 +76,8 @@ into `xpack`.
 
 ## Developer info
 
+### Overview
+
 This package provides the full CMSIS_5 code, but when
 installed via xpm the content is filtered and only the
 CMSIS Core files are used.
@@ -82,9 +87,15 @@ configuration files required to integrate it into
 CMake and meson projects, via a CMake INTERFACE library, or
 a meson dependency.
 
+### Status
+
+The **arm-cmsis-core** source library is fully functional.
+
 ### Build & integration info
 
 The headers are written in C, but can also be used in C++ projects.
+
+To include this package in a project, consider the following details.
 
 #### Include folders
 
@@ -106,7 +117,7 @@ Similarly for Cortex-A:
 #include <core_ca.h>
 ```
 
-#### Source folders
+#### Source files
 
 - none
 
@@ -132,19 +143,10 @@ When including the `core_ca.h`, the following definitions are expected:
 Note: the Cortex-A support seems to cover only a small number of
 32-bit devices and the quality is debatable.
 
-### Example
-
-The CMSIS Core headers are not intended for end-user consumption, but by
-vendor, to include them in their specific device headers.
-
-### Known problems
-
-- the headers, especially the Core_A, may trigger warnings.
-
 #### CMake
 
-To integrate the CMSIS Core headers into a CMake application, add this
-folder to the build:
+To integrate the CMSIS Core headers into a CMake application,
+add this folder to the build:
 
 ```cmake
 add_subdirectory("xpacks/xpack-3rd-party-arm-cmsis-core")`
@@ -162,8 +164,8 @@ target_link_libraries(your-target PRIVATE
 
 #### meson
 
-To integrate the CMSIS Core headers into a meson application, add this
-folder to the build:
+To integrate the CMSIS Core headers into a meson application,
+add this folder to the build:
 
 ```meson
 subdir('xpacks/xpack-3rd-party-arm-cmsis-core')
@@ -181,6 +183,15 @@ exe = executable(
   ],
 )
 ```
+
+### Example
+
+The CMSIS Core headers are not intended for end-user consumption, but by
+vendor, to include them in their specific device headers.
+
+### Known problems
+
+- the headers, especially the Core_A, may trigger warnings.
 
 ### Tests
 

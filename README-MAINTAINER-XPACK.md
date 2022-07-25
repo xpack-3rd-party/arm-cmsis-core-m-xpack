@@ -1,5 +1,5 @@
 [![license](https://img.shields.io/github/license/xpack-3rd-party/arm-cmsis-core-xpack)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml)
 [![GitHub issues](https://img.shields.io/github/issues/xpack-3rd-party/arm-cmsis-core-xpack.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/xpack-3rd-party/arm-cmsis-core-xpack.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/pulls)
 
@@ -94,7 +94,7 @@ xpm run test-all
 ## Continuous Integration
 
 All available tests are also performed on GitHub Actions, as the
-[CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml)
 workflow.
 
 Note: not yet used.
@@ -173,7 +173,7 @@ The version is visible at:
 
 When the package is considered stable:
 
-- with Sourcetree
+- with a Git client (VS Code is fine)
 - merge `xpack-develop` into `xpack`
 - push to GitHub
 - select `xpack-develop`

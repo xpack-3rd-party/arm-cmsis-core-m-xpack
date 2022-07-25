@@ -1,0 +1,40 @@
+{
+  "minimumXpmakeRequired": "0.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Liviu Ionescu",
+  "description": "Top CMSIS components",
+  "cdlComponents": {
+    "arm-cmsis-core": {
+      "parent": "xpack-3rd-party",
+      "cdlComponents": {
+        "arm-cmsis-core-m": {
+          "description": "Arm CMSIS Core (Cortex-M) headers",
+          "compilerIncludeFolders": [
+            "CMSIS/Core/Include"
+          ],
+          "compilerSourceFiles": [],
+          "compilerDefinitions": [
+            "__PROGRAM_START"
+          ],
+          "compilerOptions": [],
+          "dependencies": [],
+          "generatedDefinition": "XPACK_3RD_PARTY_INCLUDE_ARM_CMSIS_CORE_M"
+        },
+        "arm-cmsis-core-a": {
+          "description": "Arm CMSIS Core (Cortex-A) headers",
+          "compilerIncludeFolders": [
+            "CMSIS/Core_A/Include"
+          ],
+          "compilerSourceFiles": [],
+          "compilerDefinitions": [
+            "__PROGRAM_START"
+          ],
+          "compilerOptions": [],
+          "dependencies": [],
+          "generatedDefinition": "XPACK_3RD_PARTY_INCLUDE_ARM_CMSIS_CORE_A"
+
+        }
+
+    }
+  }
+}

@@ -146,7 +146,7 @@ but in the version specific release page.
 
 - open the `CHANGELOG-XPACK.md` file
 - check if all previous fixed issues are in
-- add a new entry like _- v5.4.0-6 prepared_
+- add a new entry like _* v5.4.0-6_
 - commit with a message like _prepare v5.4.0-6_
 
 ### Publish on the npmjs.com server

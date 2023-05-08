@@ -37,11 +37,15 @@ xpack_3rd_party_arm_cmsis_core_m_dependency = declare_dependency(
     'CMSIS/Core/Include',
   ),
   sources: files(
+    # None.
   ),
   compile_args: [
     # Workaround to avoid -Werror=nested-externs
     '-D__PROGRAM_START',
   ],
+  dependencies: [
+    # None.
+  ]
 )
 
 message('+ -I CMSIS/Core/Include')
@@ -55,11 +59,15 @@ xpack_3rd_party_arm_cmsis_core_a_dependency = declare_dependency(
     'CMSIS/Core_A/Include',
   ),
   sources: files(
+    # None.
   ),
   compile_args: [
     # Workaround to avoid -Werror=nested-externs
     '-D__PROGRAM_START',
   ],
+  dependencies: [
+    # None.
+  ]
 )
 
 message('+ -I CMSIS/Core_A/Include')

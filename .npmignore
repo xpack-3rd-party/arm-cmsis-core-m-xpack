@@ -59,4 +59,6 @@ linter.py
 Jenkinsfile
 .gitattributes
 
+.gitkeep
+
 # End

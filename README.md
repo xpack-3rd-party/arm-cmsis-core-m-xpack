@@ -40,7 +40,7 @@ For details please follow the instructions in the
 
 ### xpm
 
-This package is available from npmjs.com as
+This package is available as
 [`@xpack-3rd-party/arm-cmsis-core`](https://www.npmjs.com/package/@xpack-3rd-party/arm-cmsis-core)
 from the `npmjs.com` registry:
 

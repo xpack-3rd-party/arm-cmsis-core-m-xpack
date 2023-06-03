@@ -2,7 +2,7 @@
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xpack-3rd-party/arm-cmsis-core-xpack)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/tags/)
 [![npm (scoped)](https://img.shields.io/npm/v/@xpack-3rd-party/arm-cmsis-core.svg?color=blue)](https://www.npmjs.com/package/@xpack-3rd-party/arm-cmsis-core/)
 [![license](https://img.shields.io/github/license/xpack-3rd-party/arm-cmsis-core-xpack)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml)
+[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml)
 
 # A source library xPack with Arm CMSIS Core
 

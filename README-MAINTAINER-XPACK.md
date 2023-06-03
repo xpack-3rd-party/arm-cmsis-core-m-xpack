@@ -1,5 +1,5 @@
 [![license](https://img.shields.io/github/license/xpack-3rd-party/arm-cmsis-core-xpack)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml)
+[![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml)
 [![GitHub issues](https://img.shields.io/github/issues/xpack-3rd-party/arm-cmsis-core-xpack.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/xpack-3rd-party/arm-cmsis-core-xpack.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/pulls)
 
@@ -94,7 +94,7 @@ xpm run test-all
 ## Continuous Integration
 
 All available tests are also performed on GitHub Actions, as the
-[CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml)
+[CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml)
 workflow.
 
 Note: not yet used.
@@ -161,7 +161,7 @@ but in the version specific release page.
 - `npm version 5.4.0-6`
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
-  (<https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/CI.yml>)
+  (<https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml>)
 
 ### Publish
 

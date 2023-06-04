@@ -50,7 +50,7 @@ xpm init # Unless a package.json is already present
 
 xpm install @xpack-3rd-party/arm-cmsis-core@latest
 
-ls -l xpacks/xpack-3rd-party-arm-cmsis-core
+ls -l xpacks/@xpack-3rd-party/arm-cmsis-core
 ```
 
 ### Git submodule
@@ -64,7 +64,7 @@ git init # Unless already a Git project
 mkdir -p xpacks
 
 git submodule add https://github.com/xpack-3rd-party/arm-cmsis-core-xpack.git \
-  xpacks/micro-os-plus-micro-test-plus
+  xpacks/@micro-os-plus/micro-test-plus
 ```
 
 ## Branches
@@ -158,7 +158,7 @@ To integrate the CMSIS Core headers into a CMake application,
 add this folder to the build:
 
 ```cmake
-add_subdirectory("xpacks/xpack-3rd-party-arm-cmsis-core")`
+add_subdirectory("xpacks/@xpack-3rd-party/arm-cmsis-core")`
 ```
 
 The result is an INTERFACE library that can be added
@@ -177,7 +177,7 @@ To integrate the CMSIS Core headers into a meson application,
 add this folder to the build:
 
 ```meson
-subdir('xpacks/xpack-3rd-party-arm-cmsis-core')
+subdir('xpacks/@xpack-3rd-party/arm-cmsis-core')
 ```
 
 The result is an object that can be added

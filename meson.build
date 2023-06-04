@@ -14,7 +14,7 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `subdir('xpacks/xpack-3rd-party-arm-cmsis-core')`
+# `subdir('xpacks/@xpack-3rd-party/arm-cmsis-core')`
 #
 # The result is a dependency that can be referred as:
 #

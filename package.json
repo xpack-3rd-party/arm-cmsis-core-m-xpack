@@ -13,9 +13,9 @@
     "type": "git",
     "url": "https://github.com/xpack-3rd-party/arm-cmsis-core-xpack.git"
   },
-  "homepage": "https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/",
+  "homepage": "https://github.com/xpack-3rd-party/arm-cmsis-core-xpack",
   "bugs": {
-    "url": "https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/"
+    "url": "https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues"
   },
   "keywords": [
     "xpack"
@@ -23,7 +23,7 @@
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",
-    "url": "https://github.com/ilg-ul/"
+    "url": "https://github.com/ilg-ul"
   },
   "contributors": [
     {

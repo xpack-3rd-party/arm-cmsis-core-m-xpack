@@ -217,7 +217,7 @@ Tho original documentation is available on-line:
 The original content is released under the
 [MIT License](https://opensource.org/licenses/MIT/),
 with all rights reserved to
-[Liviu Ionescu](https://github.com/ilg-ul/).
+[Liviu Ionescu](https://github.com/ilg-ul).
 
 The Arm content is provided under the terms of the Apache 2.0 License.
 

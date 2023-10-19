@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/github/license/xpack-3rd-party/arm-cmsis-core-xpack)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml)
 
-# A source library xPack with Arm CMSIS Core
+# A source code library with Arm CMSIS Core
 
 This project provides the **CMSIS Core** headers as an xPack dependency.
 
@@ -214,8 +214,8 @@ Tho original documentation is available on-line:
 
 ## License
 
-The original content is released under the
-[MIT License](https://opensource.org/licenses/MIT/),
+Unless otherwise stated, the content is released under the terms of the
+[MIT License](https://opensource.org/licenses/mit/),
 with all rights reserved to
 [Liviu Ionescu](https://github.com/ilg-ul).
 
